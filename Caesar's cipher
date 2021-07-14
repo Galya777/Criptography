@@ -3,7 +3,8 @@ using namespace std;
 
 int main()
 {
-	
+	//This algorithm shows the easyest way to crypt with the Caesar's cipher who changes the letter with the next one in the alphabeth
+	//The program can change it by how much letters the user wants, not just one 
 	cout << "Enter the text to be crypted: "<<endl;
 	char crypt[1000];
 	cin.getline(crypt, 1000);
@@ -11,7 +12,7 @@ int main()
 	cout << "Enter you key: ";
 	cin >> key;
 	for (int i = 0; i < strlen(crypt); ++i) {
-		crypt[i] += key;
+		crypt[i] = (crypt[i] + key) % 26;
 		cout <<crypt[i];
 	}
 	return 0;
