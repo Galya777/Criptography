@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+const char REAL_ALPHABETH[26] = {'A', 'B' , 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R' , 'S' , 'T', 'U', 'V', 'W','X','Y','Z' };
+int orderIntheAlphabeth(char letter) {
+	int order=0;
+	for (int i = 0; i < strlen(REAL_ALPHABETH); ++i) {
+		if (toupper(letter) == REAL_ALPHABETH[i]) {
+			order = i;
+		}
+	}
+	return order+1;
+}
+bool validateKey(char* key) {
+	if (strlen(key) != 26) {
+		cout << "Invalid key. It must be 26 symbols.";
+		return false;
+	}else {
+		for (int i = 0; i < strlen(key); ++i) {
+			if (!isalpha(key[i])) {
+				cout << "Only letters are allowed to the key!";
+				return false;
+			}
+			for (int j = 0; j < strlen(key); ++j) {
+				if (key[i] == key[j] && i != j) {
+					cout << "No repeating sharacters allowed!";
+					return false;
+				}
+			}
+		}
+	}
+
+	return true;
+}
+int main()
+{
+	char* alphabeth = new (nothrow) char[27];
+	char *crypt= new (nothrow) char [100];
+	cout << "Enter your cipher: ";
+	cin.getline(alphabeth, 27);
+	while (validateKey(alphabeth)==false) {
+		cout << "Try another!";
+		cin.clear();
+		cin.getline(alphabeth, 27);
+	}
+	cout << "Enter your text: ";
+	cin.clear();
+	cin.getline(crypt, 100);
+	for (int i = 0; i < strlen(crypt); ++i) {
+		if (isalpha(crypt[i])) {
+			int order = orderIntheAlphabeth(crypt[i]);
+			crypt[i] = alphabeth[order-1];
+		}
+	}
+	for (int i = 0; i < strlen(crypt); ++i) {
+		cout << crypt[i];
+	}
+	delete[] alphabeth;
+	delete[] crypt;
+	return 0;
+}
