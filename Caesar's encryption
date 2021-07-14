@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	
+	cout << "Enter the text to be crypted: "<<endl;
+	char crypt[1000];
+	cin.getline(crypt, 1000);
+	int key;
+	cout << "Enter you key: ";
+	cin >> key;
+	for (int i = 0; i < strlen(crypt); ++i) {
+		crypt[i] += key;
+		cout <<crypt[i];
+	}
+	return 0;
+}
