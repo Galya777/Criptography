@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="testcypher.Test"
+            prefHeight="400.0" prefWidth="600.0">
+    <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <TextField fx:id="CipherTextField" promptText="Enter cipher" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="30.0" right="50.0" />
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="TxtToEnDeCryptField" promptText="Enter text to cipher/decipher" GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets left="30.0" right="50.0" />
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="OutputField" editable="false" promptText="Output" GridPane.rowIndex="5">
+                <GridPane.margin>
+                    <Insets left="30.0" right="50.0" />
+                </GridPane.margin>
+            </TextField>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="60.0" GridPane.rowIndex="6">
+                <children>
+                    <Button fx:id="EncryptButton" mnemonicParsing="false" onAction="#handleEncryptButton" prefHeight="30.0" prefWidth="100.0" text="Encrypt" />
+                    <Button fx:id="DecryptButton" mnemonicParsing="false" onAction="#handleDecryptButton" prefHeight="30.0" prefWidth="100.0" text="Decrypt" />
+                    <Button fx:id="QuitButton" mnemonicParsing="false" onAction="#handleQuitButton" prefHeight="30.0" prefWidth="100.0" text="Quit" />
+                </children>
+                <GridPane.margin>
+                    <Insets />
+                </GridPane.margin>
+            </HBox>
+            <Label text="Enter cipher word:">
+                <GridPane.margin>
+                    <Insets bottom="10.0" left="30.0" />
+                </GridPane.margin>
+            </Label>
+            <Label text="Enter text to cipher/decipher" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets bottom="10.0" left="30.0" />
+                </GridPane.margin>
+            </Label>
+            <Label text="Output:" GridPane.rowIndex="4">
+                <GridPane.margin>
+                    <Insets bottom="10.0" left="30.0" />
+                </GridPane.margin>
+            </Label>
+        </children>
+    </GridPane>
+</AnchorPane>
